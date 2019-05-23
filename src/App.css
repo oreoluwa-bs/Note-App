@@ -1,33 +1,78 @@
-.App {
-  text-align: center;
+.App{
+  max-width: 100vw;
+}
+.header .navbar-brand{
+  font-size: 30px;
+  font-weight: bold;
+}
+.header .nav-link{
+  cursor: pointer;
+}
+.add-button{
+  color: steelblue!important;
+}
+.trash-button{
+  color: crimson!important;
+}
+.ahate{
+  border: 0;
+  background: transparent;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.list-group-item{
+  padding: 20px 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.list-item,.list-item:hover{
+  color: black;
+  margin-bottom: 10px;
+  text-decoration: none;
+}
+.list-group-item .created-time{
+  position: relative;
+  top:2px;
+  font-size: 12px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.note-card{
+  height: 100vh;
 }
 
-.App-link {
-  color: #61dafb;
+.card .header .mr-auto .nav-link{
+  margin-left: 0px;
+}
+.card .header .nav-link{
+  margin-left: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card textarea {
+  resize: none;
+  height: 75vh;
+  margin-bottom: 2vh;
+}
+
+
+.login{
+  background-color: cornflowerblue;
+  height: 100vh;
+}
+
+.login-page {
+  width: 360px;
+  padding: 4% 0 0; 
+  margin: auto;
+}
+.form {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form .message{
+  font-size: 14px;
+  margin-top: 5px;
 }
