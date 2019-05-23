@@ -76,3 +76,9 @@
   font-size: 14px;
   margin-top: 5px;
 }
+.form .error-message{
+  position: absolute;
+  top:15px;
+  right: 30px;
+  font-size: 12px;
+}

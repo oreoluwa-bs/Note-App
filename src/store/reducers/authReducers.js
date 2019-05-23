@@ -8,14 +8,14 @@ const authReducer = (state = initState, action) => {
             console.log('Login unsuccessful', action.err);
             return {
                 ...state,
-                authError: 'Login failed'
+                authError: 'Email Address or Password may be incorrect',
             }
 
         case 'LOGIN_SUCCESS':
             console.log('Login successful');
             return {
                 ...state,
-                authError: null
+                authError: null,
             }
 
         case 'SIGNOUT_SUCCESS':
@@ -26,14 +26,14 @@ const authReducer = (state = initState, action) => {
             console.log('Signup succesful');
             return {
                 ...state,
-                authError: null
+                authError: null,
             }
 
         case 'SIGNUP_FAILED':
             console.log('Signup unsuccessful');
             return {
                 ...state,
-                authError: action.err.message
+                authError: action.err.message,
             }
 
         default:

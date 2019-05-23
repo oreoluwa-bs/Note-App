@@ -31,8 +31,11 @@ class SignUp extends Component {
                 <div className='container'>
                     <div className='login-page'>
                         <div className="form">
+                            <div className="text-right error-message text-danger">
+                                {authError ? <p>{authError}</p> : null}
+                            </div>
                             <h5 className='text-grey'>Join the party</h5>
-                            <form className="register-form" onSubmit={this.handleSubmit}  autoComplete="off">
+                            <form className="register-form" onSubmit={this.handleSubmit} autoComplete="off">
                                 <div className="form-group">
                                     <label htmlFor='firstName'>First Name</label>
                                     <input className='form-control' type='text' id='firstName' onChange={this.handleChange} placeholder="John" />
@@ -52,10 +55,6 @@ class SignUp extends Component {
                                 <div className="form-group">
                                     <button className="btn btn-primary btn-block">Join the party</button>
                                     <p className="message">Already have an account? <Link to='/signin' >Login</Link></p>
-
-                                    <div className="text-center form-text text-danger">
-                                        {authError ? <p>{authError}</p> : null}
-                                    </div>
                                 </div>
                             </form>
                         </div>
@@ -68,7 +67,7 @@ class SignUp extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        authError: state.firebase.auth.authError,
+        authError: state.auth.authError,
         auth: state.firebase.auth
     }
 }

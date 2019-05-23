@@ -20,6 +20,7 @@ class SignIn extends Component {
     }
     render() {
         const { authError, auth } = this.props
+
         if (auth.uid) { return <Redirect to='/' /> }
 
         return (
@@ -27,11 +28,14 @@ class SignIn extends Component {
                 <div className='container'>
                     <div className='login-page'>
                         <div className="form">
+                            <div className="text-right error-message text-danger">
+                                {authError ? <p>{authError}</p> : null}
+                            </div>
                             <h5 className='text-grey'>Login</h5>
                             <form className="register-form" onSubmit={this.handleSubmit} >
                                 <div className="form-group">
                                     <label htmlFor='email'>Email</label>
-                                    <input id='email' type="text" className="form-control" onChange={this.handleChange} placeholder="john.doe@gmail.com" autoComplete="off"/>
+                                    <input id='email' type="text" className="form-control" onChange={this.handleChange} placeholder="john.doe@gmail.com" autoComplete="off" />
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor='password'>Password</label>
@@ -41,9 +45,6 @@ class SignIn extends Component {
                                     <button className="btn btn-primary btn-block">Login</button>
                                     <p className="message">Not registered? <Link to='/signup' >Join the party</Link></p>
 
-                                    <div className="text-center form-text text-danger">
-                                        {authError ? <p>{authError}</p> : null}
-                                    </div>
                                 </div>
                             </form>
                         </div>
@@ -56,7 +57,7 @@ class SignIn extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        authError: state.firebase.auth.authError,
+        authError: state.auth.authError,
         auth: state.firebase.auth
     }
 }
